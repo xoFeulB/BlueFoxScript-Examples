@@ -1,18 +1,15 @@
 (async () => {
-  let blueFoxScript = new BlueFoxScript();
-  await blueFoxScript.init();
+  let blueFoxScript = await new BlueFoxScript().init();
 
-  if (!(await blueFoxScript.tabs.get("https://twitter.com/xoFeulB").length)) {
-    await blueFoxScript.tabs.create("https://twitter.com/xoFeulB", {
+  let tab = await blueFoxScript.tabs.create(
+    "https://twitter.com/xoFeulB",
+    msec = 2000,
+    option = {
       focused: true,
       top: 0,
       left: 0,
-    });
-    await sleep(2000);
-    await blueFoxScript.tabs.reload();
-  }
-
-  let tab = await blueFoxScript.tabs.get("https://twitter.com/xoFeulB")[0];
+    }
+  );
   let tails = tab.dispatch.tails({ dispatchEvents: [] });
   tails.target(`[data-testid="SideNav_NewTweet_Button"]`).call(`click`, null);
   await tails.run();
