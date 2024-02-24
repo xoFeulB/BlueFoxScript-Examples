@@ -11,7 +11,7 @@
         });
         tails.target(`[out]`).push({ property: { "textContent": null } })
             .sleep(5);
-        // clear checked state: Commented out for test failure
+        // clear checked state: Commented out to test failure
         // if (n != 0xff) {
         //     n.toString(2).split("").reverse().forEach((value, index) => {
         //         if (value == "1") {
