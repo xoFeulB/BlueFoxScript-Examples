@@ -15,7 +15,7 @@
         // if (n != 0xff) {
         //     n.toString(2).split("").reverse().forEach((value, index) => {
         //         if (value == "1") {
-        //             tails.defined(`${index + 1}`).call("click", null);
+        //             tails.defined(`bit-${index + 1}`).call("click", null);
         //         }
         //     });
         // }
@@ -34,7 +34,7 @@
         }
         log(`${Passed} / ${test_case} Test Passed`);
         log(`${Failed} / ${test_case} Test Failed`);
-        if (test_case == 0xff + 1) {
+        if (Passed == 0xff + 1) {
             UIkit.notification({ message: "Test Passed", status: "success" });
         } else {
             UIkit.notification({ message: "Test Failed", status: "danger" });
