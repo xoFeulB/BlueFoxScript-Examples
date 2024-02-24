@@ -1,6 +1,5 @@
 (async () => {
-  let blueFoxScript = new BlueFoxScript();
-  await blueFoxScript.init();
+  let blueFoxScript = await new BlueFoxScript();
 
   if (!(await blueFoxScript.tabs.get("https://dmauro.github.io/Keypress/").length)) {
     await blueFoxScript.tabs.create("https://dmauro.github.io/Keypress/");
