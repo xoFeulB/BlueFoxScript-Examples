@@ -1,5 +1,5 @@
 (async () => {
-  let blueFoxScript = await new BlueFoxScript().init();
+  let blueFoxScript = await new BlueFoxScript();
 
   let tab = await blueFoxScript.tabs.create(
     "https://twitter.com/xoFeulB",
