@@ -6,7 +6,7 @@
     for (let n = 0; n <= 0xff; n++) {
         n.toString(2).split("").reverse().forEach((value, index) => {
             if (value == "1") {
-                tails.defined(`${index + 1}`).call("click", null);
+                tails.defined(`bit-${index + 1}`).call("click", null);
             }
         });
         tails.target(`[out]`).push({ property: { "textContent": null } })
