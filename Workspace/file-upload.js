@@ -12,7 +12,7 @@
     .tails({ dispatchEvents: [] })
     .target("#file-upload-with-preview-myFirstImage")
     .file(
-      [await blueFoxScript.getRemoteFile("/img/BlueFox.png")]
+      [await blueFoxScript.getWorkspaceFile("/img/BlueFox.png")]
     )
     .event({
       eventObject: "Event",
@@ -24,8 +24,8 @@
     .target("#file-upload-with-preview-mySecondImage")
     .file(
       [
-        await blueFoxScript.getRemoteFile("/img/BlueFox.png"),
-        await blueFoxScript.getRemoteFile("/img/tail.png"),
+        await blueFoxScript.getWorkspaceFile("/img/BlueFox.png"),
+        await blueFoxScript.getWorkspaceFile("/img/tail.png"),
       ]
     )
     .event({
