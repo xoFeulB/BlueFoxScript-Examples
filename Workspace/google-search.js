@@ -8,8 +8,7 @@
     .setProperty({ value: "^.,.^ BlueFox" })
     .target("[name='btnK'][tabindex='0']")
     .call("click", null)
-    .run({ sleep: 50 });
-  await sleep(1000);
+    .runTillNextOnLoad({ sleep: 50 });
 
   let search_result = await tab.dispatch.script(
     () => {
