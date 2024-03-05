@@ -3,8 +3,6 @@
 
   if (!(await blueFoxScript.tabs.get("https://johndatserakis.github.io/file-upload-with-preview/").length)) {
     await blueFoxScript.tabs.create("https://johndatserakis.github.io/file-upload-with-preview/");
-    await sleep(1000);
-    await blueFoxScript.tabs.reload();
   }
 
   let tab = await blueFoxScript.tabs.get("https://johndatserakis.github.io/file-upload-with-preview/")[0];

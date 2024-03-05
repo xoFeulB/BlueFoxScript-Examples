@@ -3,8 +3,6 @@
 
   if (!(await blueFoxScript.tabs.get("https://dmauro.github.io/Keypress/").length)) {
     await blueFoxScript.tabs.create("https://dmauro.github.io/Keypress/");
-    await sleep(1000);
-    await blueFoxScript.tabs.reload();
   }
 
   let tab = await blueFoxScript.tabs.get("https://dmauro.github.io/Keypress/")[0];
