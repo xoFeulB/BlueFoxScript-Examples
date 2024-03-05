@@ -18,4 +18,5 @@
         (max_polling = 5000)
     );
     alert(JSON.stringify(result.result.value, null, 4));
+    return result.result.value;
 })();
