@@ -1,8 +1,8 @@
 (async () => {
   let blueFoxScript = await new BlueFoxScript();
 
-  let tab = await blueFoxScript.tabs.create("https://ooo.bluefox.ooo/BlueFoxDemo/8bit.html");
-  let tails = tab.dispatch.tails();
+  let tab = await blueFoxScript.createWindow("https://ooo.bluefox.ooo/BlueFoxDemo/8bit.html");
+  let tails = tab.tails();
   for (let n = 0; n <= 0xff; n++) {
     n.toString(2).split("").reverse().forEach((value, index) => {
       if (value == "1") {

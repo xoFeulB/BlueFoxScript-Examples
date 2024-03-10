@@ -1,7 +1,7 @@
 (async () => {
   let blueFoxScript = await new BlueFoxScript();
 
-  let tab = await blueFoxScript.tabs.create(
+  let tab = await blueFoxScript.createWindow(
     "https://twitter.com/xoFeulB",
     max_polling = 2000,
     option = {
@@ -10,14 +10,15 @@
       left: 0,
     }
   );
-  await tab.dispatch.tillScriptTrue(() => {
+  await tab.dispatchScriptTillTrue(() => {
     return document.querySelector(`[data-testid="SideNav_NewTweet_Button"]`)?.attributes["data-testid"].value;
   }, (max_polling = 5000));
 
-  let tails = tab.dispatch.tails({ dispatchEvents: [] });
+  let tails = tab.tails({ dispatchEvents: [] });
   tails.target(`[data-testid="SideNav_NewTweet_Button"]`).call(`click`, null);
   await tails.run();
-  await tab.dispatch.tillScriptTrue(() => {
+
+  await tab.dispatchScriptTillTrue(() => {
     return document.querySelector(`[data-testid="tweetTextarea_0RichTextInputContainer"]`)?.attributes["data-testid"].value;
   }, (max_polling = 5000));
 

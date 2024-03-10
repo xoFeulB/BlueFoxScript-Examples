@@ -1,17 +1,17 @@
 (async () => {
   let blueFoxScript = await new BlueFoxScript();
 
-  let tab = await blueFoxScript.tabs.create("https://www.google.com");
+  let tab = await blueFoxScript.createWindow("https://www.google.com");
 
-  await tab.removeCookie({
+  await tab.cookie.remove({
     name: "test-name",
   });
-  await tab.setCookie({
+  await tab.cookie.set({
     name: "test-name",
     value: "test-value",
   });
   log(
-    await tab.getCookies()
+    await tab.cookie.get()
   );
   tab.close();
 })();

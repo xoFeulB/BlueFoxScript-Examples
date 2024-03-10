@@ -1,12 +1,12 @@
 (async () => {
   let blueFoxScript = await new BlueFoxScript();
 
-  if (!(await blueFoxScript.tabs.get("https://dmauro.github.io/Keypress/").length)) {
-    await blueFoxScript.tabs.create("https://dmauro.github.io/Keypress/");
+  if (!(await blueFoxScript.findTab("https://dmauro.github.io/Keypress/").length)) {
+    await blueFoxScript.createWindow("https://dmauro.github.io/Keypress/");
   }
 
-  let tab = await blueFoxScript.tabs.get("https://dmauro.github.io/Keypress/")[0];
-  let tails = tab.dispatch.tails({ dispatchEvents: [] });
+  let tab = await blueFoxScript.findTab("https://dmauro.github.io/Keypress/")[0];
+  let tails = tab.tails({ dispatchEvents: [] });
   tails.target("body");
   for (let keyCode = "A".charCodeAt(); keyCode <= "Z".charCodeAt(); keyCode++) {
     tails.key(
