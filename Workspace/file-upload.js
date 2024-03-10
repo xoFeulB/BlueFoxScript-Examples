@@ -1,12 +1,12 @@
 (async () => {
   let blueFoxScript = await new BlueFoxScript();
 
-  if (!(await blueFoxScript.tabs.get("https://johndatserakis.github.io/file-upload-with-preview/").length)) {
-    await blueFoxScript.tabs.create("https://johndatserakis.github.io/file-upload-with-preview/");
+  if (!(await blueFoxScript.findTab("https://johndatserakis.github.io/file-upload-with-preview/").length)) {
+    await blueFoxScript.createWindow("https://johndatserakis.github.io/file-upload-with-preview/");
   }
 
-  let tab = await blueFoxScript.tabs.get("https://johndatserakis.github.io/file-upload-with-preview/")[0];
-  await tab.dispatch
+  let tab = await blueFoxScript.findTab("https://johndatserakis.github.io/file-upload-with-preview/")[0];
+  await tab
     .tails({ dispatchEvents: [] })
     .target("#file-upload-with-preview-myFirstImage")
     .file(
