@@ -1,7 +1,7 @@
 (async () => {
     let blueFoxScript = await new BlueFoxScript();
 
-    let tab = await blueFoxScript.findTab("https://ooo.bluefox.ooo/BlueFoxDemo/8bit.html")[0];
+    let tab = await blueFoxScript.findTab("https://www.bluefox.tech/BlueFoxDemo/8bit.html")[0];
 
     await tab.sendCommand(
         "Input.dispatchMouseEvent",

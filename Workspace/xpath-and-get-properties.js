@@ -1,7 +1,7 @@
 (async () => {
   let blueFoxScript = await new BlueFoxScript();
 
-  let tab = await blueFoxScript.createWindow("https://ooo.bluefox.ooo/BlueFoxDemo/8bit.html");
+  let tab = await blueFoxScript.createWindow("https://www.bluefox.tech/BlueFoxDemo/8bit.html");
 
   // XPath
   let properties = await tab.tails().getProperties(`/html/body/div/h1`);
